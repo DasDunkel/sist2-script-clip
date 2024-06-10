@@ -54,6 +54,8 @@ def main(index_file, clip_model: str = "ViT-B/32", tags_file: str = "general.txt
 
     for doc in index.document_iter(where):
 
+        print(f"Path used: '{doc.rel_path}'", file=stderr)
+
         try:
             if doc.parent or doc.mime.startswith("video/"):
 
